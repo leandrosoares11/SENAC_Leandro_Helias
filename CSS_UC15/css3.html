@@ -1,0 +1,41 @@
+<html><head><title>link sem sublinhado / Classes CSS</title>
+<link href="https://fonts.googleapis.com/css?family=Libre+Franklin" rel="stylesheet">
+
+<style>
+/* p td tr h1 h2 permite alterar o estilos das tags HTML*/
+a {
+    text-decoration:none;
+    font-family: 'Libre Franklin', sans-serif;
+}
+a:hover {
+    text-decoration:underline;
+    color:red;
+}
+body {
+    background-color:yellow;
+}
+.quadrados { /* classe personalizada */
+    height:250px;
+    width:250px;
+    /* background-color:red;*/
+    margin-bottom:2px;
+    color:white;
+    text-align: center;
+    float:left;
+    margin-right:5px;
+}
+#q1 { background-color:blue;}
+#q1:hover { background-color:red;}
+#q2 { background-color:black;}
+#q2:hover { background-color:magenta;}
+#q3 { background-color:brown;}
+#q3:hover { background-color:white;}
+</style>
+</head>
+<body>
+<div id="q1" class="quadrados">Teste
+<a href="http://www.uol.com.br">Ir para o site do UOL</a></div>
+<div id="q2" class="quadrados">Teste2
+<a href="http://www.google.com.br">Site do Google</a></div>
+<div id="q3" class="quadrados">Teste3</div>
+</body></html>

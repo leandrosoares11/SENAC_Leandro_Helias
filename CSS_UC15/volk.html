@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Volkswagen</title>
+    <style>
+        body {
+            margin: 0px;
+            font-family: Arial, sans-serif;
+            background-color: #ffffff;
+        }
+ 
+        .topo {
+            background-color: #2182DE;
+            width: 100%;
+            height: 80px;
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            padding: 0 40px; 
+            box-sizing: border-box; 
+        }
+ 
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px; 
+        }
+ 
+        .logo-img {
+            height: 50px; 
+            width: auto;
+        }
+ 
+        .nome-logo {
+            color: #ffffff;
+            font-size: 32px;
+            font-weight: bold;
+            text-transform: uppercase;  
+        }
+ 
+        .conteudo-direita {
+            display: flex;
+            flex-direction: column; 
+            align-items: flex-end; 
+            gap: 8px; 
+        }
+ 
+        .busca-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+ 
+        .busca-label {
+            color: #ffffff;
+            font-size: 14px;
+        }
+ 
+        .busca-input {
+            padding: 4px 10px;
+            border-radius: 15px; 
+            border: none;
+            outline: none;
+            width: 180px;
+        }
+ 
+        .menu-navegacao {
+            display: flex;
+            gap: 20px; 
+        }
+ 
+        .menu-navegacao a {
+            color: #ffffff;
+            text-decoration: none; 
+            font-size: 16px;
+            font-weight: bold;
+        }
+ 
+        .menu-navegacao a:hover {
+            text-decoration: underline; 
+        }
+
+        .banner {
+            position: relative;
+            width: 100%;
+            height: 500px;
+            overflow: hidden;
+        }
+
+        .Volk-banner {
+            width: 100%; 
+            height: 100%; 
+            object-fit: cover;
+        }
+
+        .Quadro_Vidro {
+            position: absolute;
+            top: 50%;
+            left: 5%;
+            transform: translateY(-50%);
+            width: 50%;
+            background: rgba(0, 0, 0, 0.45);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            padding: 40px;
+            box-sizing: border-box;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .texto-banner h1 {
+            margin: 0;
+            font-size: 40px;
+            font-weight: bold;
+            line-height: 1.1;
+            text-transform: uppercase;
+        }
+
+        .botao-personalizar {
+            background-color: #2182DE;
+            color: white;
+            border: 1px solid #ffffff;
+            border-radius: 5px;
+            padding: 12px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
+            white-space: nowrap;
+            box-shadow: 0px 4px 6px rgba(0,0,0,0.2);
+        }
+
+        .botao-personalizar:hover {
+            background-color: #1a6cb8;
+        }
+
+        .container-modelos {
+            max-width: 1200px;
+            margin: 40px auto;
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            padding: 0 20px;
+        }
+
+        .card-carro {
+            flex: 1;
+            text-align: center;
+            background-color: #f9f9f9;
+            border-radius: 4px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            cursor: pointer; /* Adiciona a mãozinha ao passar o mouse nos cards */
+        }
+
+        .card-carro img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .card-carro .legenda {
+            padding: 15px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #000000;
+            transition: background-color 0.3s ease, color 0.3s ease; /* Transição suave para o efeito */
+        }
+
+        /* ALTERAÇÃO AQUI: Agora aplica o fundo azul em QUALQUER card ao passar o mouse */
+        .card-carro:hover .legenda {
+            background-color: #4a82b8;
+            color: white;
+        }
+        
+        .banner_two {
+            position: relative;
+            width: 100%;
+            height: 400px; 
+            overflow: hidden;
+            margin-top: 40px; 
+        }
+
+        .Volk_banner_two {
+            width: 100%; 
+            height: 100%; 
+            object-fit: cover;
+        }
+
+        .texto-banner_two {
+            position: absolute;
+            top: 50%;
+            left: 5%;
+            transform: translateY(-50%); 
+            color: white; 
+            z-index: 2; 
+        }
+
+        .texto-banner_two h1 {
+            margin: 0;
+            font-size: 40px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .texto-banner_two p {
+            margin: 10px 0 0 0; 
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .botao-personalizar_two {
+            position: absolute;
+            bottom: 30px;
+            left: 5%;
+            background-color: #2182DE;
+            color: white;
+            border: 1px solid #ffffff;
+            padding: 12px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+       .servicos {
+        max-width: 1200px; 
+        margin: 50px auto 50px auto; 
+        display: flex; 
+        justify-content: space-between; 
+        gap: 30px; 
+        padding: 0 40px; 
+        box-sizing: border-box; 
+        }
+        .servico {
+        flex: 1; 
+        text-align: center; 
+        display: flex; 
+        flex-direction: column; 
+        align-items: center; 
+        }
+        .servico img {
+        width: 140px;
+        height: 140px; 
+        object-fit: cover; 
+        border-radius: 8px; 
+        margin-bottom: 15px;
+        }
+        .servico h3 {
+        font-size: 18px;
+        color: #000000;
+        margin: 0 0 10px 0; 
+        font-weight: bold; 
+        line-height: 1.2; 
+        }
+        .servico p {
+        font-size: 14px; 
+        color: #333333; 
+        margin: 0 0 15px 0; 
+        line-height: 1.4; 
+        min-height: 40px; 
+        }
+        .servico a {
+        font-size: 14px; 
+        color: #2182de; 
+        text-decoration: none; 
+        font-weight: bold; 
+        }
+        .servico a:hover {
+        text-decoration: underline;
+        }
+        .rodape {
+        background-color: #2182DE; 
+        width: 100%; 
+        height: 70px;   
+        text-align: center; 
+        box-sizing: border-box; 
+        margin-top: 40px; 
+        }
+        .rodape-conteudo {
+        padding-top: 16px; 
+        font-size: 14px; 
+        }
+        .devT {
+        color: #ffffff;    
+        }
+        .dev {
+        color: #000000; 
+        font-weight: bold; 
+        }
+
+       @media (max-width: 850px) {
+            .topo { height: auto; padding: 10px 20px; gap: 10px; }
+            .nome-logo { font-size: 22px; }
+            .logo-img { height: 35px; }
+            .busca-input { width: 130px; }
+            .menu-navegacao { gap: 12px; }
+            .menu-navegacao a { font-size: 13px; }
+
+            .banner { height: 320px; }
+            .banner_two { height: 260px; }
+
+            .Quadro_Vidro { width: 90%; left: 5%; padding: 15px; gap: 10px; }
+            .texto-banner h1 { font-size: 22px; }
+            .botao-personalizar { padding: 8px 12px; font-size: 12px; white-space: normal; text-align: center; }
+
+            .texto-banner_two h1 { font-size: 24px; }
+            .texto-banner_two p { font-size: 14px; }
+            .botao-personalizar_two { padding: 8px 12px; font-size: 12px; bottom: 15px; }
+
+            .container-modelos, .servicos { flex-direction: column; align-items: center; gap: 25px; padding: 0 20px; }
+            .card-carro { width: 100%; max-width: 360px; }
+            .servico p { min-height: auto; }
+        }
+    </style>
+</head>
+<body>
+ 
+    <div class="topo">
+        <div class="logo">
+            <img src="volkswagen-car-logo-png-brand-image-0.png" alt="Volkswagen Logo" class="logo-img">
+            <span class="nome-logo">Volkswagen</span>
+        </div>
+ 
+        <div class="conteudo-direita">
+            <div class="busca-container">
+                <span class="busca-label">Buscar</span>
+                <input type="text" class="busca-input" placeholder="Pesquisar...">
+            </div>
+           
+            <nav class="menu-navegacao">
+                <a href="#">início</a>
+                <a href="#">modelos</a>
+                <a href="#">equipe</a>
+                <a href="#">contato</a>
+            </nav>
+        </div>
+    </div>
+ 
+    <div class="banner">
+        <img src="vw-destaque1.jpeg" alt="Volkswagen Banner" class="Volk-banner">
+        <div class="Quadro_Vidro">
+            <div class="texto-banner">
+                <h1>Potência<br>Estilo<br>Segurança</h1>
+            </div>
+            <a href="#" class="botao-personalizar">Personalize seu VOLKSWAGEN</a>
+        </div>
+    </div>
+
+    <div class="container-modelos">
+        <div class="card-carro">
+            <img src="t-cross.jpg" alt="Pré-Venda T-Cross">
+            <div class="legenda">Pré-Venda T-Cross</div>
+        </div>
+
+        <div class="card-carro">
+            <img src="polo.png" alt="Novo Polo Beats">
+            <div class="legenda">Novo Polo Beats</div>
+        </div>
+
+        <div class="card-carro">
+            <img src="passat.png" alt="Novo Passat">
+            <div class="legenda">Novo Passat</div>
+        </div>
+    </div>
+
+   <div class="banner_two">
+        <img src="fundo-corp.jpg" alt="Volkswagen Banner Two" class="Volk_banner_two">
+        
+        <div class="texto-banner_two">
+            <h1>Vendas Corporativas</h1>
+            <p>PcD, Taxista, Produtor Rural, MEI e demais segmentos</p>
+        </div>
+        
+        <a href="#" class="botao-personalizar_two">Conheça as ofertas</a>
+    </div>
+
+      <div class="servicos">
+    <div class="servico">
+    <img src="revisao.png" alt="Revisão Volkswagen">
+    <h3>Revisão<br>Volkswagen</h3>
+    <p>Mantenha seu Volkswagen sempre como novo.</p>
+    <a href=""> Clique e saiba mais</a>
+</div>
+    <div class="servico">
+    <img src="financial.png" alt="Volkswagen Financial Service">
+    <h3>Volkswagen Financial<br>Service</h3>
+    <p>Descubra os benefícios nos investimentos Volkswagen.</p>
+    <a href=""> Clique e confira</a>
+</div>
+    <div class="servico">
+    <img src="itaucard.png" alt="Volkswagen Itaucard">
+    <h3>Volkswagen<br>Itaucard</h3>
+    <p>Adquira já o seu e acumule vantagens!</p>
+    <a href=""> Clique e peça</a>
+</div>
+</div>
+    <div class="rodape">
+    <div class="rodape-conteudo">
+    <span class="devT">Desenvolvido por </span><span class="dev">Leandro Helias</span><br>
+    <span class="devT">Todos os direitos reservados!</span>
+</div>
+</div>
+</body>
+</html>

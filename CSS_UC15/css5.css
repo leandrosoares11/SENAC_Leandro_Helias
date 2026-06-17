@@ -1,0 +1,17 @@
+body {background-color:red;}
+/*Mobile / Tablet*/
+@media screen and (max-width: 756px) {
+    body {
+        background-color: blue;
+    }
+}
+
+/*Desktop*/
+@media screen and (min-width: 757px) {
+    body {
+        background-color: green;
+    }
+}
+
+/*Quando for mobile sumir o menu
+Sumir as Laterais e centralizar o Aprendendo HTML */

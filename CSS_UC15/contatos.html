@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Primeiro Site</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.topo {
+    background-color:#0bc20b;
+    width: 100%;
+    height: 80px;    
+    text-align: end; 
+}
+.topo span {
+    color:#ffffff;
+    font-size: 40px;
+    line-height: 80px;
+    padding-right: 22px;
+}
+
+.menu {
+    background-color:#7e0796;
+    width: 100%;
+    height: 60px;
+    position: relative;
+}
+
+.menu .icon {
+    display: none;
+    font-size: 30px;
+    color: #fff;
+    padding: 15px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.menu ul {
+    list-style-type: none;
+    font-size: 24px;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.menu ul li {
+    width: 176px;
+    text-align: center;   
+    border-right: 1px solid #000;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu ul li a {
+    text-decoration: none;
+    color: #000;
+}
+
+.menu ul li:hover {
+    background-color:#08b608;
+}
+
+.menu ul li:hover a {
+    color: #fff;
+}
+
+.completa {
+    display: flex;
+    width: 100%;
+}
+
+.lateral {
+    width: 250px;
+    border: 1px solid #ccc;
+    height: 554px;
+}
+
+.meio {
+    flex-grow: 1;
+    padding: 20px;
+}
+
+.rodape {
+    background-color:#6a0dc2;
+    width: 100%;
+    height: 70px;    
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+}
+
+.texto {
+    padding-top: 16px;
+}
+
+.devT {
+    color:#fff;
+}
+
+.dev {
+    color: #ffa600;
+}
+
+@media (max-width: 900px) {
+
+    .menu { height: auto; }
+
+    .menu .icon {
+        display: block;
+        text-align: right;
+        background-color:#7e0796;
+    }
+
+    #myLinks {
+        display: none;
+        width: 100%;
+    }
+
+    .menu ul {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .menu ul li {
+        width: 100%;
+        border-bottom: 1px solid #000;
+    }
+
+    .lateral { display: none; }
+
+    .completa { display: block; }
+
+    .rodape {
+        position: relative;
+        margin-top: 20px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="topo">
+    <span>Aprendendo HTML</span>
+</div>
+
+<div class="menu">
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()">☰</a>
+
+    <ul id="myLinks">
+        <li><a href="home.html">Home</a></li>
+        <li><a href="sobrenos.html">Quem Somos</a></li>
+        <li><a href="cursos.html">Cursos</a></li>
+        <li><a href="servicos.html">Serviços</a></li>
+        <li><a href="contatos.html">Contato</a></li>
+    </ul>
+</div>
+
+<div class="completa">
+    <div class="lateral"></div>
+
+    <div class="meio">
+        <h2>Apostila de HTML</h2>
+
+        <p>A Apostila HTML nasceu com a missão de democratizar o conhecimento técnico.</p>
+
+        <p><strong>Público Alvo:</strong></p>
+        <ul>
+            <li>Qualquer pessoa que deseja aprender HTML;</li>
+            <li>Desenvolvedores que trabalham com HTML;</li>
+            <li>Professores ou instrutores;</li>
+        </ul>
+
+        <p><strong>Pré-requisitos:</strong></p>
+        <ul>
+            <li>Conhecimento básico de informática;</li>
+            <li>Acesso a um computador;</li>
+            <li>Curiosidade e persistência;</li>
+        </ul>
+    </div>
+
+    <div class="lateral"></div>
+</div>
+
+<div class="rodape">
+    <div class="texto">
+        <span class="devT">Desenvolvido por </span>
+        <span class="dev">Leandro Helias</span><br>
+        <span class="devT">Todos os direitos reservados!</span>
+    </div>
+</div>
+
+<script>
+function myFunction() {
+    var x = document.getElementById("myLinks");
+    if (x.style.display === "block") {
+        x.style.display = "none";
+    } else {
+        x.style.display = "block";
+    }
+}
+</script>
+
+</body>
+</html>
